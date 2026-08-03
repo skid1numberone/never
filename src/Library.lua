@@ -1,12 +1,12 @@
-local Library = {}
+local Window = require(script.Parent.Window)
 
+local Library = {}
 Library.Windows = {}
 
 function Library:CreateWindow(settings)
-    settings = settings or {}
-    local windowTitle = settings.Title or "Window"
-    print("Creating window: " .. windowTitle)
-    return windowTitle
+    local window = Window.new(settings)
+    table.insert(Library.Windows, window)
+    return window
 end
 
 return Library
